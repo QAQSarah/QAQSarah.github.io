@@ -79,7 +79,7 @@ jQuery(document).ready(function($) {
 		var random_bg = Math.floor(Math.random() * 109 + 1);
 
 		//var bg = 'url(/img/random/' + random_bg + '.jpg)';
-		var bg = 'url(/img/random/' + random_bg + '.jpg)';
+		var bg = 'url(/img/' + random_bg + '.jpg)';
 
 		$("#header-bg-2").css("background-image", bg);
 	};
