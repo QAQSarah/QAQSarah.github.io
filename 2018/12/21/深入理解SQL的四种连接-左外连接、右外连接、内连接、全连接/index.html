@@ -1,0 +1,451 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+
+	<!DOCTYPE html>
+	<html>
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<title>蓝倩_个人博客</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="John Doe">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+   	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- favicon -->
+	<link href="/img/favicon.ico" rel="Shortcut Icon" type="image/ico">
+	
+	<!-- font-awesome -->
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+	<body>	
+		<!--Preloader-->
+<div id="preloader">
+	<div id="status">
+		<img alt="PRELOADER" src="/img/logo.png">
+	</div>
+</div>
+<!--Preloader end-->
+
+<!-- header -->
+
+	<header id="header-bg-2">
+
+	
+		<div id="cd-logo"><a href="/"><img src="/img/logo.png" alt="Logo"></a></div>
+	
+	
+	<!-- motto or description -->
+		
+ 		<p class="motto"></p>
+	
+	
+	<!-- current page name or title -->
+	
+		
+		
+			
+			<p class="page-name">当前文章&nbsp;:&nbsp;《》</p>
+			
+		
+	
+	
+	<!-- others: such as change-bg, time... -->
+	<p class="page-name-other">
+		12/21/2018 
+		<style type="text/css">
+	header:after {
+		content: '';
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #222222;
+		opacity: .5;
+		z-index: -1;
+	}
+	
+	.change-header-bg{
+		font-style: normal;
+	}
+	.change-header-bg i{
+		text-align: center;
+		cursor: pointer;
+		pointer-events: bounding-box;
+	}
+	@media(max-width:512px) {
+		.change-header-bg {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function changeHeaderBg(){
+		var random_bg = Math.floor(Math.random() * 109 + 1);
+		var bg = 'url(' + random_bg + '.jpg)';
+		$("#header-bg-2").css("background-image", bg);
+	}
+</script>
+
+<span class="change-header-bg">
+	——&nbsp;<i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>	
+</span>
+	</p>		
+</header>
+
+<!-- nav -->
+<div id="cd-nav">
+	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+
+	<nav id="cd-main-nav">
+		<ul>
+			
+      		<li class="fa fa-/">
+           		<a href="/" title="主页">主页</a>	
+      		</li>
+    		
+      		<li class="fa fa-/archives">
+           		<a href="/archives" title="归档">归档</a>	
+      		</li>
+    		
+      		<li class="fa fa-/categories">
+           		<a href="/categories" title="分类">分类</a>	
+      		</li>
+    		
+      		<li class="fa fa-/about">
+           		<a href="/about" title="关于">关于</a>	
+      		</li>
+    		
+    		
+        	
+		</ul>
+	</nav>
+</div>
+
+		<!--main-->
+		<main> 
+		<div class="page-container">
+		<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+
+		<article class="am-article blog-article-p">
+
+			<div class="am-article-hd">
+				
+
+
+				<h1 class="am-article-title blog-text-center">
+					
+					
+				</h1>
+
+				<p class="am-article-meta blog-text-center">
+					<span>
+						<i class="fa fa-clock-o"></i> 
+						<a href="/2018/12/21/深入理解SQL的四种连接-左外连接、右外连接、内连接、全连接/" itemprop="url">
+	<time datetime="2018-12-21T03:31:16.852Z" itemprop="datePublished">
+  		2018-12-21
+  </time>
+</a>    
+&nbsp;
+					</span>
+					
+					<span>						
+						
+					</span>
+				</p>
+			</div>
+
+			<div class="am-article-bd">
+				<div class="content" id="post-content">
+					
+						<hr>
+<h2 id="title-深入理解SQL的四种连接-左外连接、右外连接、内连接、全连接"><a href="#title-深入理解SQL的四种连接-左外连接、右外连接、内连接、全连接" class="headerlink" title="title:深入理解SQL的四种连接-左外连接、右外连接、内连接、全连接"></a>title:深入理解SQL的四种连接-左外连接、右外连接、内连接、全连接</h2><p>1、内联接（典型的联接运算，使用像 =  或 &lt;&gt; 之类的比较运算符）。包括相等联接和自然联接。<br>内联接使用比较运算符根据每个表共有的列的值匹配两个表中的行。例如，检索 students和courses表中学生标识号相同的所有行。   </p>
+<p>2、外联接。外联接可以是左向外联接、右向外联接或完整外部联接。<br>在 FROM子句中指定外联接时，可以由下列几组关键字中的一组指定：<br>1）LEFT  JOIN或LEFT OUTER JOIN<br>左向外联接的结果集包括  LEFT OUTER子句中指定的左表的所有行，而不仅仅是联接列所匹配的行。如果左表的某行在右表中没有匹配行，则在相关联的结果集行中右表的所有选择列表列均为空值。<br>2）RIGHT  JOIN 或 RIGHT  OUTER  JOIN<br>右向外联接是左向外联接的反向联接。将返回右表的所有行。如果右表的某行在左表中没有匹配行，则将为左表返回空值。<br>3）FULL  JOIN 或 FULL OUTER JOIN<br>完整外部联接返回左表和右表中的所有行。当某行在另一个表中没有匹配行时，则另一个表的选择列表列包含空值。如果表之间有匹配行，则整个结果集行包含基表的数据值。   </p>
+<p>3、交叉联接<br>交叉联接返回左表中的所有行，左表中的每一行与右表中的所有行组合。交叉联接也称作笛卡尔积。<br>FROM 子句中的表或视图可通过内联接或完整外部联接按任意顺序指定；但是，用左或右向外联接指定表或视图时，表或视图的顺序很重要。有关使用左或右向外联接排列表的更多信息，请参见使用外联接。     </p>
+<h2 id="例子："><a href="#例子：" class="headerlink" title="例子：   "></a>例子：   </h2><p>  a表     id   name     b表     id   job   parent_id<br>              1   张3                   1     23     1<br>              2   李四                 2     34     2<br>              3   王武                 3     34     4       </p>
+<h2 id="a-id同parent-id-存在关系"><a href="#a-id同parent-id-存在关系" class="headerlink" title="  a.id同parent_id   存在关系   "></a>  a.id同parent_id   存在关系   </h2><p> 1） 内连接<br>  select   a.<em>,b.</em>   from   a   inner   join   b     on   a.id=b.parent_id<br>  结果是<br>  1   张3                   1     23     1<br>  2   李四                  2     34     2   </p>
+<p>  2）左连接<br>  select   a.<em>,b.</em>   from   a   left   join   b     on   a.id=b.parent_id<br>  结果是<br>  1   张3                   1     23     1<br>  2   李四                  2     34     2<br>  3   王武                  null   </p>
+<p> 3） 右连接<br>  select   a.<em>,b.</em>   from   a   right   join   b     on   a.id=b.parent_id<br>  结果是<br>  1   张3                   1     23     1<br>  2   李四                  2     34     2<br>  null                       3     34     4   </p>
+<p> 4） 完全连接<br>  select   a.<em>,b.</em>   from   a   full   join   b     on   a.id=b.parent_id<br>  结果是<br>  1   张3                  1     23     1<br>  2   李四                 2     34     2<br>  null               　　  3     34     4<br>  3   王武                 null<br>——————————————————————————————–一、交叉连接（CROSS JOIN）<br>交叉连接（CROSS JOIN）：有两种，显式的和隐式的，不带ON子句，返回的是两表的乘积，也叫笛卡尔积。<br>例如：下面的语句1和语句2的结果是相同的。</p>
+<p>语句1：隐式的交叉连接，没有CROSS JOIN。<br>SELECT O.ID, O.ORDER_NUMBER, C.ID, C.NAME<br>FROM ORDERS O , CUSTOMERS C<br>WHERE O.ID=1;</p>
+<p>语句2：显式的交叉连接，使用CROSS JOIN。<br>SELECT O.ID,O.ORDER_NUMBER,C.ID,<br>C.NAME<br>FROM ORDERS O CROSS JOIN CUSTOMERS C<br>WHERE O.ID=1;<br>语句1和语句2的结果是相同的，查询结果如下：</p>
+<p>二、内连接（INNER JOIN）<br>内连接（INNER JOIN）：有两种，显式的和隐式的，返回连接表中符合连接条件和查询条件的数据行。（所谓的链接表就是数据库在做查询形成的中间表）。<br>例如：下面的语句3和语句4的结果是相同的。</p>
+<p>语句3：隐式的内连接，没有INNER JOIN，形成的中间表为两个表的笛卡尔积。<br>SELECT O.ID,O.ORDER_NUMBER,C.ID,C.NAME<br>FROM CUSTOMERS C,ORDERS O<br>WHERE C.ID=O.CUSTOMER_ID;</p>
+<p>语句4：显示的内连接，一般称为内连接，有INNER JOIN，形成的中间表为两个表经过ON条件过滤后的笛卡尔积。<br>SELECT O.ID,O.ORDER_NUMBER,C.ID,C.NAME<br>FROM CUSTOMERS C INNER JOIN ORDERS O ON C.ID=O.CUSTOMER_ID;<br>语句3和语句4的查询结果：</p>
+<p>三、外连接（OUTER JOIN）：外连不但返回符合连接和查询条件的数据行，还返回不符合条件的一些行。外连接分三类：左外连接（LEFT OUTER JOIN）、右外连接（RIGHT OUTER JOIN）和全外连接（FULL OUTER JOIN）。<br>三者的共同点是都返回符合连接条件和查询条件（即：内连接）的数据行。不同点如下：<br>左外连接还返回左表中不符合连接条件单符合查询条件的数据行。<br>右外连接还返回右表中不符合连接条件单符合查询条件的数据行。<br>全外连接还返回左表中不符合连接条件单符合查询条件的数据行，并且还返回右表中不符合连接条件单符合查询条件的数据行。全外连接实际是上左外连接和右外连接的数学合集（去掉重复），即“全外=左外 UNION 右外”。<br>说明：左表就是在“（LEFT OUTER JOIN）”关键字左边的表。右表当然就是右边的了。在三种类型的外连接中，OUTER 关键字是可省略的。</p>
+<p>下面举例说明：<br>语句5：左外连接（LEFT OUTER JOIN）<br>SELECT O.ID,O.ORDER_NUMBER,O.CUSTOMER_ID,C.ID,C.NAME<br>FROM ORDERS O LEFT OUTER JOIN CUSTOMERS C ON C.ID=O.CUSTOMER_ID;</p>
+<p>语句6：右外连接（RIGHT OUTER JOIN）<br>SELECT O.ID,O.ORDER_NUMBER,O.CUSTOMER_ID,C.ID,C.NAME<br>FROM ORDERS O RIGHT OUTER JOIN CUSTOMERS C ON C.ID=O.CUSTOMER_ID;<br>注意：WHERE条件放在ON后面查询的结果是不一样的。例如：</p>
+<p>语句7：WHERE条件独立。<br>SELECT O.ID,O.ORDER_NUMBER,O.CUSTOMER_ID,C.ID,C.NAME<br>FROM ORDERS O LEFT OUTER JOIN CUSTOMERS C ON C.ID=O.CUSTOMER_ID<br>WHERE O.ORDER_NUMBER&lt;&gt;’MIKE_ORDER001’;</p>
+<p>语句8：将语句7中的WHERE条件放到ON后面。<br>SELECT O.ID,O.ORDER_NUMBER,O.CUSTOMER_ID,C.ID,C.NAME<br>FROM ORDERS O LEFT OUTER JOIN CUSTOMERS C ON C.ID=O.CUSTOMER_ID AND O.ORDER_NUMBER&lt;&gt;’MIKE_ORDER001’;</p>
+<p>从语句7和语句8查询的结果来看，显然是不相同的，语句8显示的结果是难以理解的。因此，推荐在写连接查询的时候，ON后面只跟连接条件，而对中间表限制的条件都写到WHERE子句中。</p>
+<p>语句9：全外连接（FULL OUTER JOIN）。<br>SELECT O.ID,O.ORDER_NUMBER,O.CUSTOMER_ID,C.ID,C.NAME<br>FROM ORDERS O FULL OUTER JOIN CUSTOMERS C ON C.ID=O.CUSTOMER_ID;<br>注意：MySQL是不支持全外的连接的，这里给出的写法适合Oracle和DB2。但是可以通过左外和右外求合集来获取全外连接的查询结果。下图是上面SQL在Oracle下执行的结果：</p>
+<p>语句10：左外和右外的合集，实际上查询结果和语句9是相同的。<br>SELECT O.ID,O.ORDER_NUMBER,O.CUSTOMER_ID,C.ID,C.NAME<br>FROM ORDERS O LEFT OUTER JOIN CUSTOMERS C ON C.ID=O.CUSTOMER_ID<br>UNION<br>SELECT O.ID,O.ORDER_NUMBER,O.CUSTOMER_ID,C.ID,C.NAME<br>FROM ORDERS O RIGHT OUTER JOIN CUSTOMERS C ON C.ID=O.CUSTOMER_ID;<br>语句9和语句10的查询结果是相同的，如下：</p>
+<p>四、联合连接（UNION JOIN）：这是一种很少见的连接方式。Oracle、MySQL均不支持，其作用是：找出全外连接和内连接之间差异的所有行。这在数据分析中排错中比较常用。也可以利用数据库的集合操作来实现此功能。<br>语句11：联合查询（UNION JOIN）例句，还没有找到能执行的SQL环境。<br>SELECT O.ID,O.ORDER_NUMBER,O.CUSTOMER_ID,C.ID,C.NAME<br>FROM ORDERS O UNION JOIN CUSTOMERS C ON C.ID=O.CUSTOMER_ID</p>
+<p>语句12：语句11在DB2下的等价实现。还不知道DB2是否支持语句11呢！<br>SELECT O.ID,O.ORDER_NUMBER,O.CUSTOMER_ID,C.ID,C.NAME<br>FROM ORDERS O FULL OUTER JOIN CUSTOMERS C ON C.ID=O.CUSTOMER_ID<br>EXCEPT<br>SELECT O.ID,O.ORDER_NUMBER,O.CUSTOMER_ID,C.ID,C.NAME<br>FROM ORDERS O INNER JOIN CUSTOMERS C ON C.ID=O.CUSTOMER_ID;</p>
+<p>语句13：语句11在Oracle下的等价实现。<br>SELECT O.ID,O.ORDER_NUMBER,O.CUSTOMER_ID,C.ID,C.NAME<br>FROM ORDERS O FULL OUTER JOIN CUSTOMERS C ON C.ID=O.CUSTOMER_ID<br>MINUS<br>SELECT O.ID,O.ORDER_NUMBER,O.CUSTOMER_ID,C.ID,C.NAME<br>FROM ORDERS O INNER JOIN CUSTOMERS C ON C.ID=O.CUSTOMER_ID;<br>查询结果如下：</p>
+<p>五、自然连接（NATURAL INNER JOIN）：说真的，这种连接查询没有存在的价值，既然是SQL2标准中定义的，就给出个例子看看吧。自然连接无需指定连接列，SQL会检查两个表中是否相同名称的列，且假设他们在连接条件中使用，并且在连接条件中仅包含一个连接列。不允许使用ON语句，不允许指定显示列，显示列只能用<em>表示（ORACLE环境下测试的）。对于每种连接类型（除了交叉连接外），均可指定NATURAL。下面给出几个例子。<br>语句14：<br>SELECT </em><br>FROM ORDERS O NATURAL INNER JOIN CUSTOMERS C;</p>
+<p>语句15：<br>SELECT *<br>FROM ORDERS O NATURAL LEFT OUTER JOIN CUSTOMERS C;</p>
+<p>语句16：<br>SELECT *<br>FROM ORDERS O NATURAL RIGHT OUTER JOIN CUSTOMERS C;</p>
+<p>语句17：<br>SELECT *<br>FROM ORDERS O NATURAL FULL OUTER JOIN CUSTOMERS C;</p>
+<p>六、SQL查询的基本原理：两种情况介绍。<br>第一、单表查询：根据WHERE条件过滤表中的记录，形成中间表（这个中间表对用户是不可见的）；然后根据SELECT的选择列选择相应的列进行返回最终结果。</p>
+<p>第二、两表连接查询：对两表求积（笛卡尔积）并用ON条件和连接连接类型进行过滤形成中间表；然后根据WHERE条件过滤中间表的记录，并根据SELECT指定的列返回查询结果。</p>
+<p>第三、多表连接查询：先对第一个和第二个表按照两表连接做查询，然后用查询结果和第三个表做连接查询，以此类推，直到所有的表都连接上为止，最终形成一个中间的结果表，然后根据WHERE条件过滤中间表的记录，并根据SELECT指定的列返回查询结果。<br>理解SQL查询的过程是进行SQL优化的理论依据。</p>
+<p>七、ON后面的条件（ON条件）和WHERE条件的区别：<br>ON条件：是过滤两个链接表笛卡尔积形成中间表的约束条件。<br>WHERE条件：在有ON条件的SELECT语句中是过滤中间表的约束条件。在没有ON的单表查询中，是限制物理表或者中间查询结果返回记录的约束。在两表或多表连接中是限制连接形成最终中间表的返回结果的约束。<br>从这里可以看出，将WHERE条件移入ON后面是不恰当的。推荐的做法是：<br>ON只进行连接操作，WHERE只过滤中间表的记录。</p>
+<p>八、总结<br>连接查询是SQL查询的核心，连接查询的连接类型选择依据实际需求。如果选择不当，非但不能提高查询效率，反而会带来一些逻辑错误或者性能低下。下面总结一下两表连接查询选择方式的依据：<br>1、 查两表关联列相等的数据用内连接。<br>2、 Col_L是Col_R的子集时用右外连接。<br>3、 Col_R是Col_L的子集时用左外连接。<br>4、 Col_R和Col_L彼此有交集但彼此互不为子集时候用全外。<br>5、 求差操作的时候用联合查询。<br>多个表查询的时候，这些不同的连接类型可以写到一块。例如：<br>SELECT T1.C1,T2.CX,T3.CY<br>FROM TAB1 T1<br>       INNER JOIN TAB2 T2 ON (T1.C1=T2.C2)<br>       INNER JOIN TAB3 T3 ON (T1.C1=T2.C3)<br>       LEFT OUTER JOIN TAB4 ON(T2.C2=T3.C3);<br>WHERE T1.X &gt;T3.Y;</p>
+
+					
+				</div>
+			</div>
+		</article>
+
+		<ul class="am-pagination">
+    
+	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/12/20/spring和springmvc总结/" title="spring 和springmvc使用总结">
+			下一篇 &raquo;
+		</a>
+		</li>
+	 
+ </ul>
+        
+
+		<div class="theme-annie-comment-button-container">
+	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
+		加载评论
+		<!--加载评论-->
+	</button>
+</div>
+
+<div id="annie-comment-container" class="theme-annie-comment-main-container">
+
+	
+		
+			<!-- comment valine -->
+			<!-- show valine comment -->
+<div id="valineComment" class="comment"></div>
+
+<!-- valine`s js & css -->
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/valine.min.js"></script>
+<link rel="stylesheet" href="/css/comment.css">
+
+<script>
+	var checkExistComment = setInterval(function() {
+		if( $('#valineComment').length ) {
+			new Valine({
+				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+				av: AV,
+				//使用id寻找div元素（使用class可能找不到）
+				el: '#valineComment',
+				emoticon_url: 'https://cloud.panjunwen.com/alu',
+				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
+				app_id: "3333....", //获取APP ID
+				app_key: "3333......", //获取APP KEY
+				placeholder: "no any!", //评论框占位提示文字        			
+			});
+			clearInterval(checkExistComment);
+		}
+	}, 100);
+</script>
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	/* Show Comment */
+	var Annie_Comment = function() {
+		function Show_Hidden(obj) {
+			obj.style.display = 'block';
+		}
+		
+		//var obutton = $('#annie-comment-button');
+		//var obutton = $('#annie-comment-container');
+		var obutton = document.getElementById("annie-comment-button" || "0");
+		var odiv = document.getElementById("annie-comment-container");
+		if( 'obutton' ) {
+			obutton.onclick = function() {
+				Show_Hidden(odiv);
+				$("#annie-comment-button").css("display", 'none');
+				return false;
+			}
+		}
+	};
+
+	(function Annie_Init() {
+		Annie_Comment();
+	})();
+</script>
+		
+		<!--
+	时间：2018-09-24
+	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+-->
+
+	
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				
+					<strong>文章目录</strong>
+				
+				
+				<!--toc(post.content)-->
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#title-深入理解SQL的四种连接-左外连接、右外连接、内连接、全连接"><span class="post-toc-text">title:深入理解SQL的四种连接-左外连接、右外连接、内连接、全连接</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子："><span class="post-toc-text">例子：   </span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#a-id同parent-id-存在关系"><span class="post-toc-text">  a.id同parent_id   存在关系   </span></a></li></ol>
+			</nav>
+			<div class="post-toc-bar"><div>
+		</div></div></aside>
+	
+
+	</div>
+</div>
+		</div>
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="blog-text-center">
+		<div class="theme-annie-social">
+				
+				
+					<a href="http://github.com/" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Weibo" target="_blank"><i class="fa fa-weibo"></i>&nbsp;</a>
+				
+				
+					<a href="http://github.com/" title="Email" target="_blank"><i class="fa fa-envelope-o"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="QQ" target="_blank"><i class="fa fa-qq"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Twitter" target="_blank"><i class="fa fa-twitter"></i>&nbsp;</a>
+						
+				
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			
+				&copy; 2017 - 2018, content by John Doe. All Rights Reserved.			       	
+			
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.		
+		</div>
+	</div>
+</footer>
+		<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+
+<style>
+	.motto {
+		color: #000000;
+		font-size: 20px;
+		margin: 100px 25% 0;
+		width: 50%;
+		line-height: 1.4;
+		font-family:"KaiTi", "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+		text-align: center;
+	}
+	@media(max-width: 890px) {
+		.motto {	
+			margin: 100px 10% 0;
+			width: 80%;
+		}
+	}
+	@media(max-width: 890px) {
+		.motto {
+			margin: 100px 5% 0;
+			width: 90%;
+		}
+	}
+</style>
+
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html(getMingYanContent());
+	</script>	
+
+
+
+
+
+
+
+	<script type="text/javascript" src="/js/toc.js"></script>
+
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript">
+	//generate a random img that pre_name 'from 0 to 110'
+	var random_bg = Math.floor(Math.random() * 109 + 1);
+
+	//var bg = 'url(/img/random/' + random_bg + '.jpg)';		
+	var bg = 'url(' + random_bg + '.jpg)';
+
+	$("#header-bg-2").css("background-image", bg);
+</script>
+		
+		<!--back to top-->
+        <style type="text/css">
+	#totop {
+		background: white;
+		border-radius: 50%;
+		position: fixed;
+		right: 5.4%;
+		bottom: 80px;
+		cursor: pointer;
+	}
+	
+	#totop a {
+		color: #474747;
+		background-color: transparent;
+		padding: 10px;
+		text-decoration: none;
+	}
+	
+	@media(max-width:512px) {
+		#totop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+</style>
+
+
+	<div id="totop">
+  		<a href="javascript:;" class="fa fa-arrow-up"></a>
+	</div>
+
+	</body>
+	</html>
+
